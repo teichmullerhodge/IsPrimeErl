@@ -1,0 +1,1 @@
+Simple prime checker in erlang. For learning purposes.
