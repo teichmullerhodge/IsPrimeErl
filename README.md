@@ -1,1 +1,1 @@
-Simple prime checker in erlang. For learning purposes.
+Simple programs written in erlang for learning purposes.
