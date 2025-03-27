@@ -5,7 +5,7 @@
 %%% @end
 %%% Created : 25 Mar 2025 by TeichmullerHodge <matheussilvatech@gmail.com>
 -module(erlearn).
--export([is_prime/1, main/0, calculator/3, volume_sphere/1]).
+-export([is_prime/1, main/0, calculator/3, volume_sphere/1, bhaskara/4]).
 
 
 %%% Verify if a number is prime.
@@ -36,6 +36,21 @@ volume_sphere(R) ->
     PI = 3.14159265359,
     (4/3) * PI * R*R*R.
 
+%%% Bhaskara formula
+
+bhaskara(true, A, B, C) when B*B - (4 * A * C) >= 0 ->
+        Delta = B*B - (4 * A * C),
+        
+        Divisor = 2 * A,        
+        (-B + math:sqrt(Delta)) / Divisor;
+
+bhaskara(false, A, B, C) when B*B - (4 * A * C) >= 0 ->
+        Delta = B*B - (4 * A * C),
+        Divisor = 2 * A,    
+        (-B - math:sqrt(Delta)) / Divisor;
+
+bhaskara(_, A, B, C) when B*B - (4 * A * C) < 0 ->
+        "Could not calculate sqrt of negative values.".
 
 main() ->
     % example
